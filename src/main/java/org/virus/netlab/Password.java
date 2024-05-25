@@ -12,7 +12,7 @@ public class Password {
 
     public String generate(int len) {
         String password = "";
-        String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`-=[]{}\\|;:'\"<,>.?/";;
+        String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`-=[]{}\\|;:'\"<,>.?/";
 
         try {
             for (int i = 0; i < len; i++) {

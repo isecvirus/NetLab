@@ -74,8 +74,12 @@
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="menuContainer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="quit" alignment="1" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="instanceIDLabel" min="-2" pref="329" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="quit" min="-2" pref="88" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
                           <Component id="statisticsContainer" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -101,7 +105,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="10" max="32767" attributes="0"/>
+                              <EmptySpace pref="10" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -124,7 +128,10 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="aclContainer" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="aclContainer" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
@@ -137,8 +144,11 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="menuContainer" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="quit" min="-2" pref="36" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="quit" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="instanceIDLabel" min="-2" pref="23" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Component id="aclContainer" min="-2" max="-2" attributes="0"/>
@@ -272,7 +282,7 @@
                           <Component id="cs1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="sourceCode" min="-2" pref="54" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Component id="elapsedLabel22" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       </Group>
@@ -391,7 +401,7 @@
                       <Color blue="93" green="83" red="7a" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="v1.0.0"/>
+                    <Property name="text" type="java.lang.String" value="v1.0.0 | created by virus"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="netkit">
@@ -659,7 +669,7 @@
                               <Component id="foundOUIResults" max="32767" attributes="0"/>
                               <Component id="elapsedLabel17" alignment="1" max="32767" attributes="0"/>
                               <Component id="ouiField" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jScrollPane1" alignment="1" pref="241" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="1" pref="244" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
@@ -2523,7 +2533,7 @@
             <Container class="v4j.Component.Panel.Panel" name="securePasswordContainer">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="57" green="43" red="5c" type="rgb"/>
+                  <Color blue="57" green="43" red="3e" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -2531,15 +2541,14 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace pref="10" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="passwordField" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Component id="passwordLength" min="-2" pref="38" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="securePasswordBtn" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="passwordField" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
@@ -2553,9 +2562,9 @@
                               <Component id="securePasswordBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="passwordLength" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="passwordField" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="passwordField" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2575,14 +2584,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="securePasswordBtnActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JPasswordField" name="passwordField">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="44" green="39" red="33" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JTextField" name="passwordLength">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2595,8 +2596,17 @@
                     <Property name="text" type="java.lang.String" value="16"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JTextField" name="passwordField">
+                </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="instanceIDLabel">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="93" green="83" red="7a" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

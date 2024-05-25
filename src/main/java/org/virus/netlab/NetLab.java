@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.UUID;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -107,6 +108,7 @@ public class NetLab extends Window {
         AddressValidator(IPv4ValidatorField, "ip");
         AddressValidator(ip2bin_ipField, "ip");
         AddressValidator(randomIPv4Field, "ip");
+        AddressValidator(ip2cidr_ipField, "ip");
         AddressValidator(randomMACField, "mac");
         AddressValidator(MACValidatorField, "mac");
         AddressValidator(dec2bin_decField, "decimal");
@@ -126,6 +128,8 @@ public class NetLab extends Window {
         new Draggable(this);
         GlassPanePopup.install(this);
         Notifications.getInstance().setJFrame(this);
+        
+        instanceIDLabel.setText(String.valueOf(UUID.randomUUID()));
     }
 
     private List<SmoothField> getFocusableTextFields(Container container) {
@@ -368,8 +372,9 @@ public class NetLab extends Window {
         jComboBox2 = new javax.swing.JComboBox<>();
         securePasswordContainer = new v4j.Component.Panel.Panel();
         securePasswordBtn = new v4j.Component.Button.Button();
-        passwordField = new javax.swing.JPasswordField();
         passwordLength = new javax.swing.JTextField();
+        passwordField = new javax.swing.JTextField();
+        instanceIDLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -429,7 +434,7 @@ public class NetLab extends Window {
         elapsedLabel22.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         elapsedLabel22.setForeground(new java.awt.Color(122, 131, 147));
         elapsedLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        elapsedLabel22.setText("v1.0.0");
+        elapsedLabel22.setText("v1.0.0 | created by virus");
 
         netkit.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         netkit.setForeground(new java.awt.Color(0, 170, 255));
@@ -546,7 +551,7 @@ public class NetLab extends Window {
                 .addComponent(cs1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sourceCode, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(15, 15, 15)
                 .addComponent(elapsedLabel22)
                 .addGap(5, 5, 5))
         );
@@ -681,7 +686,7 @@ public class NetLab extends Window {
                     .addComponent(foundOUIResults, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(elapsedLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ouiField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE))
                 .addGap(10, 10, 10))
         );
         networkStatisticsContainerLayout.setVerticalGroup(
@@ -1654,7 +1659,7 @@ public class NetLab extends Window {
                 .addGap(10, 10, 10))
         );
 
-        securePasswordContainer.setBackground(new java.awt.Color(92, 67, 87));
+        securePasswordContainer.setBackground(new java.awt.Color(62, 67, 87));
 
         securePasswordBtn.setBackground(new java.awt.Color(132, 197, 238));
         securePasswordBtn.setForeground(new java.awt.Color(17, 17, 17));
@@ -1664,9 +1669,6 @@ public class NetLab extends Window {
                 securePasswordBtnActionPerformed(evt);
             }
         });
-
-        passwordField.setBackground(new java.awt.Color(51, 57, 68));
-        passwordField.setText("jPasswordField1");
 
         passwordLength.setBackground(new java.awt.Color(51, 57, 68));
         passwordLength.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1678,14 +1680,13 @@ public class NetLab extends Window {
         securePasswordContainerLayout.setHorizontalGroup(
             securePasswordContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, securePasswordContainerLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(securePasswordContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addGroup(securePasswordContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(passwordField)
                     .addGroup(securePasswordContainerLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(passwordLength, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(securePasswordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(passwordField))
+                        .addComponent(securePasswordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10))
         );
         securePasswordContainerLayout.setVerticalGroup(
@@ -1695,10 +1696,12 @@ public class NetLab extends Window {
                 .addGroup(securePasswordContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(securePasswordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordLength, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                .addGap(10, 10, 10)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                .addGap(5, 5, 5))
         );
+
+        instanceIDLabel.setForeground(new java.awt.Color(122, 131, 147));
 
         javax.swing.GroupLayout panelBorderLayout = new javax.swing.GroupLayout(panelBorder);
         panelBorder.setLayout(panelBorderLayout);
@@ -1708,8 +1711,11 @@ public class NetLab extends Window {
                 .addGap(15, 15, 15)
                 .addComponent(menuContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addGroup(panelBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(quit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorderLayout.createSequentialGroup()
+                        .addComponent(instanceIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(quit, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(statisticsContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelBorderLayout.createSequentialGroup()
@@ -1729,7 +1735,7 @@ public class NetLab extends Window {
                                         .addComponent(ip2cidrContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(10, 10, 10)
                                         .addComponent(bin2decContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addGroup(panelBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelBorderLayout.createSequentialGroup()
                                 .addGroup(panelBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1745,7 +1751,9 @@ public class NetLab extends Window {
                                     .addComponent(securePasswordContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(10, 10, 10)
                                 .addComponent(networkStatisticsContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(aclContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelBorderLayout.createSequentialGroup()
+                        .addComponent(aclContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         panelBorderLayout.setVerticalGroup(
@@ -1755,8 +1763,10 @@ public class NetLab extends Window {
                 .addGroup(panelBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(menuContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelBorderLayout.createSequentialGroup()
-                        .addComponent(quit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(quit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(instanceIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(aclContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1903,7 +1913,10 @@ public class NetLab extends Window {
     }//GEN-LAST:event_randomMACBtnActionPerformed
 
     private void ip2cidr_ipFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ip2cidr_ipFieldActionPerformed
-        // TODO add your handling code here:
+        String ip = ip2cidr_ipField.getText();
+        if (new IPv4().is(ip)) {
+            ip2cidr_cidrField.setText(String.valueOf(String.join("", new IPv4().binary(ip)).replace("0", "").length()));
+        }
     }//GEN-LAST:event_ip2cidr_ipFieldActionPerformed
 
     private void randomIPv4BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_randomIPv4BtnActionPerformed
@@ -1968,7 +1981,12 @@ public class NetLab extends Window {
         String length = passwordLength.getText();
         
         if (new Decimal().is(length)) {
-            passwordField.setText(new Password().generate(Math.max(Math.min(4, Integer.parseInt(length)), 16)));
+            int fixedLength = Math.min(Math.max(4, Integer.parseInt(length)), 16);
+            String password = new Password().generate(fixedLength);
+            
+            passwordField.setText(password);
+            
+            passwordLength.setText(String.valueOf(fixedLength));
         }
     }//GEN-LAST:event_securePasswordBtnActionPerformed
 
@@ -2070,6 +2088,7 @@ public class NetLab extends Window {
     private javax.swing.JLabel elapsedLabel7;
     private javax.swing.JLabel elapsedLabel9;
     private v4j.Component.Progress.LineBar foundOUIResults;
+    private javax.swing.JLabel instanceIDLabel;
     private v4j.Component.Panel.Panel ip2binContainer;
     private v4j.Component.Field.SmoothField ip2bin_ipField;
     private v4j.Component.Field.SmoothField ip2bin_oct1;
@@ -2104,7 +2123,7 @@ public class NetLab extends Window {
     private javax.swing.JList<String> ouiList;
     private v4j.Component.Panel.PanelBorder panelBorder;
     private v4j.Component.Panel.Panel parentPanel;
-    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField passwordField;
     private javax.swing.JTextField passwordLength;
     private javax.swing.JLabel periodLabel;
     private v4j.MessagePane.Button quit;
