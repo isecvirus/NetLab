@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.virus</groupId>
     <artifactId>NetLab</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <repositories>
         <repository>
@@ -70,4 +70,6 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>org.virus.netlab.NetLab</exec.mainClass>
     </properties>
+    <name>NetLab</name>
+    <description>NetLab (Networking Lab), is a project aims to provide an excellent environment for students to learn variety of topics.</description>
 </project>

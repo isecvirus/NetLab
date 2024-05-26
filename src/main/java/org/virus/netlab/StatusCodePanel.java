@@ -172,6 +172,7 @@ public class StatusCodePanel extends Panel {
         elapsedLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         elapsedLabel4.setText("Vendor");
 
+        descriptionField.setEditable(false);
         descriptionField.setBackground(new java.awt.Color(51, 57, 68));
         descriptionField.setColumns(20);
         descriptionField.setLineWrap(true);

@@ -225,6 +225,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="descriptionField">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="44" green="39" red="33" type="rgb"/>
             </Property>

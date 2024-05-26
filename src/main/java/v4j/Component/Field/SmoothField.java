@@ -19,7 +19,7 @@ public class SmoothField extends JTextField {
         lineColor = new Color(52, 152, 219);
         strokeWidth = 2;
         setOpaque(false);
-        setBorder(null);
+        setBorder(BorderFactory.createEmptyBorder(3, 10, 3, 10));
     }
 
     public Color getFillColor() {
